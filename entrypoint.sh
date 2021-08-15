@@ -17,8 +17,8 @@ case $target in
     pkgbuild)
         namcap PKGBUILD
         install_deps
-        PKGEXT='.pkg.tar' makepkg --syncdeps --noconfirm
-        namcap "${pkgname}"-*.pkg.tar
+        PKGEXT='.pkg.tar.zst' makepkg --syncdeps --noconfirm
+        namcap "${pkgname}"-*.pkg.tar.zst
         ;;
     srcinfo)
         makepkg --printsrcinfo | diff .SRCINFO - || \
